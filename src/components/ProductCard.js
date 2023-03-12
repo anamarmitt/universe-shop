@@ -15,7 +15,27 @@ const Product = (props) => {
       <div>
         <p>{productName}</p>
         <p>${price}</p>
-        <Button onClick={() => addItem(id)} />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+          }}
+        >
+          <Button onClick={() => addItem(id)} />
+          {cartItemsAmount > 0 && (
+            <div
+              style={{
+                border: "1px solid #fff",
+                borderRadius: "5px",
+                padding: "6px",
+                fontSize: "1.2rem",
+              }}
+            >
+              {cartItemsAmount}
+            </div>
+          )}
+        </div>
       </div>
     </CardStyled>
   );
